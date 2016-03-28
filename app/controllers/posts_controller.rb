@@ -13,4 +13,13 @@ class PostsController < ApplicationController
                            content: params["content"])
     redirect_to :root
   end
+
+  def edit
+    edit_post = Post.find(params[:id])
+    render :edit
+  end
+
+  def show
+    
+  end
 end
