@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   get "posts/new", to: "posts#new", as: "posts_new"
   post "posts", to: "posts#create"
+  post "posts/edit", to: "posts#edit"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
