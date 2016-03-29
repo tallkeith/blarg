@@ -15,11 +15,25 @@ class PostsController < ApplicationController
   end
 
   def edit
-    edit_post = Post.find(params[:id])
-    render :edit
+    post = Post.find(params[:id])
+    render :edit, locals: { post: post }
+  end
+
+  def update
+    update_post = Post.find(params[:id])
+    update_post.update( title: params["title"], content: params["content"])
+
+    redirect_to :root
   end
 
   def show
-    
+    post = Post.find(params[:id])
+    render :show, locals: { post: post }
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to :root
   end
 end

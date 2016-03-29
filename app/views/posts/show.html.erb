@@ -1,0 +1,8 @@
+<ul class="posts">
+  <% posts.each do |post| %>
+  <h1><%=post.title%></h1>
+    <li class="blog-post"><%= post.content %> 
+    	<%=link_to("Edit", edit_post_path(post)) %>
+    	<%=link_to("Show", show_post_path(post.id)) %></li>
+  <% end %>
+</ul>

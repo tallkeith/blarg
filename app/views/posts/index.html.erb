@@ -1,9 +1,13 @@
-<%= link_to("Add a New Post!", posts_new_path) %>
+<%= link_to("Add a New Post!", post_new_path) %>
 
 <h1>ALL OF THE BLOG POSTINGS</h1>
 
 <ul class="posts">
   <% posts.each do |post| %>
-    <li class="blog-post">Title: <%= post.title %> <%=link_to("Edit", posts_edit_path(post.id)) %></li>
+    <li class="blog-post">Title: <%= post.title %> |
+    	<%=link_to("Edit", edit_post_path(post)) %> |
+    	<%=link_to("Show", show_post_path(post)) %> |
+    	<%=link_to("Delete", post_path(post), method: :delete) %>
+    </li>
   <% end %>
 </ul>
