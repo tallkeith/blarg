@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-    posts = Post.all
-    render :index, locals: { posts: posts }
+    #render :index, locals: { posts: posts }
+    @posts = Post.page(params[:page]).per(10)
   end
 
   def new

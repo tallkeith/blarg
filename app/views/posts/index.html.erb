@@ -3,10 +3,13 @@
 <h1>ALL OF THE BLOG POSTINGS</h1>
 
 <ul class="posts">
-  <% posts.each do |post| %>
+  <% @posts.each do |post| %>
     <li class="blog-post"><%= link_to(post.title, show_post_path(post)) %> |
     	<%=link_to("Edit", edit_post_path(post)) %> |
     	<%=link_to("Delete", post_path(post), method: :delete) %>
     </li>
   <% end %>
+
+
 </ul>
+<nav><%= paginate @posts %></nav>
