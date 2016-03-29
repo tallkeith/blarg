@@ -1,6 +1,6 @@
 <div class="post">
   
-  <h2><%= link_to_unless_current(@post.title, post_path(@post)) %></h2>
+  <h2><%= link_to_unless_current(@post.title, show_post_path(@post)) %></h2>
     <h4>Written <%= time_ago_in_words(@post.created_at) %> ago</h4>
     <p class="blog-post"><%= @post.content %></p>
     
