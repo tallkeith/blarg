@@ -1,8 +1,10 @@
-<ul class="posts">
-  <% posts.each do |post| %>
-  <h1><%=post.title%></h1>
-    <li class="blog-post"><%= post.content %> 
-    	<%=link_to("Edit", edit_post_path(post)) %>
-    	<%=link_to("Show", show_post_path(post.id)) %></li>
-  <% end %>
-</ul>
+<div class="post">
+  
+  <h2><%= link_to_unless_current(@post.title, post_path(@post)) %></h2>
+    <h4>Written <%= time_ago_in_words(@post.created_at) %> ago</h4>
+    <p class="blog-post"><%= @post.content %></p>
+    
+       	
+<%= link_to("Homepage", :root) %>
+  
+</div>

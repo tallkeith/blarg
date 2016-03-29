@@ -4,9 +4,8 @@
 
 <ul class="posts">
   <% posts.each do |post| %>
-    <li class="blog-post">Title: <%= post.title %> |
+    <li class="blog-post"><%= link_to(post.title, post_path(post)) %> |
     	<%=link_to("Edit", edit_post_path(post)) %> |
-    	<%=link_to("Show", show_post_path(post)) %> |
     	<%=link_to("Delete", post_path(post), method: :delete) %>
     </li>
   <% end %>
